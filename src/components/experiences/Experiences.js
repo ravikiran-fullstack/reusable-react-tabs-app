@@ -5,6 +5,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import { Button } from '@material-ui/core';
 
 import { MdDone } from 'react-icons/md';
 
@@ -13,20 +14,13 @@ import useStyles from "./styles";
 const Experiences = ({
   exp = { title: "", company: "", dates: "", duties: [] },
 }) => {
-  console.log("activeExp", exp);
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <Typography variant="h4">{exp.title || ""}</Typography>
       <Typography
         variant="h5"
-        style={{
-          background: "#dae2ec",
-          width: "fit-content",
-          padding: "0 10px",
-          color: "#617d98",
-          textTransform: "lowercase",
-        }}
+        className={classes.company}
       >
         {exp.company || ""}
       </Typography>
@@ -43,6 +37,9 @@ const Experiences = ({
           );
         })}
       </List>
+      <div style={{textAlign:'center'}}>
+        <Button className={classes.moreInfoBtn}>More Info</Button>
+      </div>
     </div>
   );
 };

@@ -12,13 +12,15 @@ export default makeStyles((theme) => ({
       borderLeft:'1px solid blue'
     },
     "&:active": {
-      borderLeft:'1px solid blue'
+      borderLeft:'1px solid green'
     },
+
   },
   btnDiv: {
-    textAlign: "right",
+    textAlign: "center",
   },
   activeTab: {
-    borderLeft:'1px solid blue'
+    borderLeft: '1px solid blue',
+    backgroundColor: '#fafafa'
   }
 }));
